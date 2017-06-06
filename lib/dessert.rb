@@ -1,17 +1,32 @@
 class Dessert
+    attr_accessor :name
+    attr_accessor :calories
+    
   def initialize(name, calories)
-    # your code here
+    @name = name
+    @calories = calories
   end
   def healthy?
-    # your code here
+    ((@calories < 200) && (self.delicious?)) ? (true) : (false)
   end
   def delicious?
-    # your code here
+    return true
   end
+  
+  
 end
 
 class JellyBean < Dessert
+    attr_accessor :flavor
+  
   def initialize(flavor)
-    # your code here
+    @flavor = flavor
+    @name = @flavor + " jelly bean"
+    @calories = 5
+    
+  end
+  
+  def delicious?
+    return (@flavor != "licorice")
   end
 end
